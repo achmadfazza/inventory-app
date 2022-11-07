@@ -17,9 +17,9 @@
                     <tbody>
                         @foreach ($transactions as $i => $transaction)
                             <tr>
-                                <td>{{ $i + $transactions->firstItem }}</td>
-                                <td>{{ $i + $transactions->user->name }}</td>
-                                <td>{{ $i + $transactions->invoice }}</td>
+                                <td>{{ $i + $transactions->firstItem() }}</td>
+                                <td>{{ $transaction->user->name }}</td>
+                                <td>{{ $transaction->invoice }}</td>
                                 <td>
                                     @foreach ($transaction->details as $detail)
                                         <li>{{ $detail->product->name }}</li>

@@ -74,7 +74,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($reportd as $i => $report)
+            @foreach ($reports as $i => $report)
                 <tr>
                     <td>{{ $i + 1 }}</td>
                     <td style="text-align: right;">
