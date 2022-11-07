@@ -5,10 +5,11 @@
     <x-landing.container>
         <x-landing.grid class="lg:grid-cols-12 gap-6">
             <div class="col-span-12 lg:col-span-8">
-                <x-landing.header title="Daftar Produk" subtitle='Kumpulan data produk ada di gudang..' url="" />
+                <x-landing.header title="Daftar Produk" subtitle="Kumpulan data produk yang ada di gudang.."
+                    url="{{ route('product.index') }}" />
                 <x-landing.grid class="md:grid-cols-2 gap-6 items-start">
                     @foreach ($products as $product)
-                        <x-landing.product-item : product=$product />
+                        <x-landing.product-item :product=$product />
                     @endforeach
                 </x-landing.grid>
                 @if ($products->count() >= 6)
@@ -34,7 +35,7 @@
                 </div>
                 <div class="lg:p-4 flex flex-row gap-8 overflow-x-auto sm:grid sm:grid-cols-2 md:gap-2">
                     @foreach ($categories as $category)
-                        <x-landing.category-item : category=$category />
+                        <x-landing.category-item :category=$category />
                     @endforeach
                 </div>
             </div>
