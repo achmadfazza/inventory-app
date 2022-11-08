@@ -2,31 +2,72 @@
 
 namespace App\Http\Controllers\Backoffice;
 
-use Illuminate\Http\Request;
+use App\Models\Supplier;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
+use App\Http\Requests\SupplierRequest;
 
-class StokController extends Controller
+class SupplierController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $products = Product::with(['supplier', 'category'])
-            ->search('name')
+        $suppliers = Supplier::search('name')
             ->latest()
-            ->paginate(10)
+            ->paginate(8)
             ->withQueryString();
 
-        return view('backoffice.stock.index', compact('products'));
+        return view('backoffice.supplier.index', compact('suppliers'));
     }
 
-    public function update(Request $request, $id)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(SupplierRequest $request)
     {
-        $product = Product::findOrFail($id);
-
-        $product->update([
-            'quantity' => $request->quantity,
+        Supplier::create([
+            'name' => $request->name,
+            'telp' => $request->telp,
+            'address' => $request->address,
         ]);
 
-        return back()->with('toast_success', 'Stok berhasil disimpan');
+        return back()->with('toast_success', 'Data berhasil disimpan');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(SupplierRequest $request, Supplier $supplier)
+    {
+        $supplier->update([
+            'name' => $request->name,
+            'telp' => $request->telp,
+            'address' => $request->address,
+        ]);
+
+        return back()->with('toast_success', 'Data berhasil disimpan');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Supplier $supplier)
+    {
+        $supplier->delete();
+
+        return back()->with('toast_success', 'Data berhasil dihapus');
     }
 }

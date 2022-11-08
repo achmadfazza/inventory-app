@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Backoffice\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Landing\HomeController;
+use App\Http\Controllers\Backoffice\CategoryController;
 use App\Http\Controllers\Backoffice\DashboardController;
 use App\Http\Controllers\Backoffice\OrderController;
 use App\Http\Controllers\Backoffice\PermissionController;
@@ -15,7 +16,6 @@ use App\Http\Controllers\Backoffice\UserController;
 use App\Http\Controllers\Landing\CartController;
 use App\Http\Controllers\Landing\ProductController as LandingProductController;
 use App\Http\Controllers\Landing\CategoryController as LandingCategoryController;
-use App\Http\Controllers\Landing\HomeController;
 use App\Http\Controllers\Landing\TransactionController as LandingTransactionController;
 
 
@@ -37,7 +37,6 @@ Route::controller(CartController::class)->middleware('auth')->as('cart.')->group
     Route::put('/cart/update/{cart:id}', 'update')->name('update');
     Route::delete('/cart/delete/{cart}', 'destroy')->name('destroy');
 });
-
 Route::post('/transaction', LandingTransactionController::class)->middleware('auth')->name('transaction.store');
 
 Route::group(['prefix' => 'backoffice', 'as' => 'backoffice.', 'middleware' => ['auth']], function () {
