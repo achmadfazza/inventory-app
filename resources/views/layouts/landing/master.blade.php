@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ asset('icon.png') }}" type="image/x-icon" />
@@ -12,7 +11,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body style="font-family: 'Oswald',sans-serif;">
+<body style="font-family: 'Oswald', sans-serif;">
     @include('layouts.landing.partials.navbar')
     <div class="mb-20">
         @yield('content')
@@ -20,40 +19,42 @@
     </div>
     @include('layouts.landing.partials.footer')
 
-    <!--SweetAlert -->
-
+    <!-- SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript">
         function deleteData(id) {
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
-                    confirmButton = 'btn btn-success',
-                    cancelButton = 'btn btn-danger'
-                }
-                buttonStyling = true
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: true
             })
+
             swalWithBootstrapButtons.fire({
-                title: 'Kamu yakin ingin mengeluarkan item ini ? ',
+                title: 'Kamu yakin ingin mengeluarkan item ini ?',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Ya, Tolong keluarkan',
+                confirmButtonText: 'Ya, tolong keluarkan',
                 cancelButtonText: 'Tidak',
-                reverseButton: true,
+                reverseButtons: true
             }).then((result) => {
-                    if (result.value) {
-                        event.preventDefault();
-                        document.getElementById('delete-form-' + id).submit();
-                    } else if (
-                        /* Read more about handling dismissals below */
-                        result.dismiss === Swal.DismissReason.cancel
-                    ) {
-                        swalWithBootstrapButtons.fire(
-                            'Data kamu tetap aman',
-                            '',
-                            'error'
-                        }
-                    })
-            }
+                if (result.value) {
+                    event.preventDefault();
+                    document.getElementById('delete-form-' + id).submit();
+
+                } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                        'Data kamu tetap aman',
+                        '',
+                        'error'
+                    )
+                }
+            })
+        }
     </script>
 </body>
 
