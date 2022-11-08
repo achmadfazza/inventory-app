@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backoffice;
 
-use PDF;
+use \PDF;
 use Carbon\Carbon;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
