@@ -106,7 +106,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        Storage::disk('local')->delete($this->path, basename($category->image));
+        Storage::disk('local')->delete($this->path . basename($category->image));
 
         $category->delete();
 
