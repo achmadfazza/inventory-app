@@ -24,10 +24,14 @@ class ReportController extends Controller
         $fromDate = $request->from_date;
         $toDate = $request->to_date;
 
-        $reports = Transaction::with('details', 'user')
-            ->whereDate('created_at', '>=', $fromDate)
-            ->whereDate('created_at', '<=', $toDate)
-            ->get();
+        if (!$fromDate || !$toDate) {
+            return back()->with('toast_error', 'Silahkan masukan tanggal');
+        } else {
+            $reports = Transaction::with('details', 'user')
+                ->whereDate('created_at', '>=', $fromDate)
+                ->whereDate('created_at', '<=', $toDate)
+                ->get();
+        }
 
         return view('backoffice.report.index', compact('fromDate', 'toDate', 'reports'));
     }
