@@ -47,6 +47,11 @@
                     </div>
                 @enderror
             </div>
+            <div class="flex gap-4">
+                @guest
+                    <p>Sudah punya akun ? <a href="{{ route('login') }}">Login</a></p>
+                @endguest
+            </div>
             <div class="form-footer">
                 <button type="submit" class="btn btn-primary btn-block">Daftar</button>
             </div>

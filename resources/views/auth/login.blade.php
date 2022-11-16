@@ -27,6 +27,11 @@
                     </div>
                 @enderror
             </div>
+            <div class="flex gap-4">
+                @guest
+                    <p>Belum punya akun ? <a href="{{ route('register') }}">Register</a></p>
+                @endguest
+            </div>
             <div class="form-footer">
                 <button type="submit" class="btn btn-primary btn-block">Masuk</button>
             </div>
