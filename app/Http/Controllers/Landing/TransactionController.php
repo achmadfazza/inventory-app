@@ -45,7 +45,7 @@ class TransactionController extends Controller
 
             return redirect(route('home'))->with('toast_success', 'Terimakasih pesanan anda akan diantar oleh pihak gudang');
         } else {
-            return back()->with('toast_error','Item tidak boleh kosong')
+            return back()->with('toast_error', 'Item tidak boleh kosong');
         }
     }
 }
