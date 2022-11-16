@@ -13,35 +13,39 @@ use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Request $request)
     {
-        $length = 8;
-        $random = '';
+        if ($request->user()->carts()->count() >= 1) {
+            $length = 8;
+            $random = '';
 
-        for ($i = 0; $i < $length; $i++) {
-            $random .= rand(0, 1) ? rand(0, 9) : chr(rand(ord('a'), ord('z')));
-        }
+            for ($i = 0; $i < $length; $i++) {
+                $random .= rand(0, 1) ? rand(0, 9) : chr(rand(ord('a'), ord('z')));
+            }
 
-        $invoice = 'INV-' . Str::upper($random);
+            $invoice = 'INV-' . Str::upper($random);
 
-        $transaction = Transaction::create([
-            'invoice' => $invoice,
-            'user_id' => Auth::id(),
-        ]);
-
-        $carts = Cart::where('user_id', Auth::id())->get();
-
-        foreach ($carts as $cart) {
-            TransactionDetail::create([
-                'transaction_id' => $transaction->id,
-                'product_id' => $cart->product_id,
-                'quantity' => $cart->quantity,
+            $transaction = Transaction::create([
+                'invoice' => $invoice,
+                'user_id' => Auth::id(),
             ]);
-            Product::whereId($cart->product_id)->decrement('quantity', $cart->quantity);
+
+            $carts = Cart::where('user_id', Auth::id())->get();
+
+            foreach ($carts as $cart) {
+                TransactionDetail::create([
+                    'transaction_id' => $transaction->id,
+                    'product_id' => $cart->product_id,
+                    'quantity' => $cart->quantity,
+                ]);
+                Product::whereId($cart->product_id)->decrement('quantity', $cart->quantity);
+            }
+
+            Cart::where('user_id', Auth::id())->delete();
+
+            return redirect(route('home'))->with('toast_success', 'Terimakasih pesanan anda akan diantar oleh pihak gudang');
+        } else {
+            return back()->with('toast_error','Item tidak boleh kosong')
         }
-
-        Cart::where('user_id', Auth::id())->delete();
-
-        return redirect(route('home'))->with('toast_success', 'Terimakasih pesanan anda akan diantar oleh pihak gudang');
     }
 }

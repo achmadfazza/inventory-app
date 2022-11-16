@@ -41,6 +41,7 @@ class CartController extends Controller
             ->where('product_id', $product->id)
             ->first();
 
+
         if ($alreadyInCart) {
             return back()->with('toast_error', 'Produk sudah ada didalam keranjang');
         } else {
