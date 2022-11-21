@@ -9,7 +9,7 @@
             </h3>
             <div class="mb-3">
                 <label class="form-label">Nama</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="masukan name anda"
+                <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="masukan nama anda"
                     name="name">
                 @error('name')
                     <div class="invalid-feedback">
