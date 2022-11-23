@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\TransactionDetail;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
@@ -30,7 +31,15 @@ class TransactionController extends Controller
                 'user_id' => Auth::id(),
             ]);
 
+            //update user
+            User::whereId(Auth::id())->update([
+                'company' => $request->company,
+                'telp' => $request->telp,
+                'address' => $request->address,
+            ]);
+
             $carts = Cart::where('user_id', Auth::id())->get();
+
 
             foreach ($carts as $cart) {
                 TransactionDetail::create([

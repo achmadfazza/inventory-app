@@ -33,6 +33,30 @@
                         class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-100 cursor-not-allowed"
                         value="{{ Auth::user()->email }}" name="email" readonly />
                 </div>
+                <div class="flex flex-col gap-y-2">
+                    <label class="text-base text-gray-700">
+                        Nama Perusahaan
+                    </label>
+                    <input type="text"
+                        class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-100 "
+                        value="{{ Auth::user()->company }}" name="company" required/>
+                </div>
+                <div class="flex flex-col gap-y-2">
+                    <label class="text-base text-gray-700">
+                        No. Telephone
+                    </label>
+                    <input type="text"
+                        class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-100 "
+                        value="{{ Auth::user()->telp }}" name="telp" required/>
+                </div>
+                <div class="flex flex-col gap-y-2">
+                    <label class="text-base text-gray-700">
+                        Alamat
+                    </label>
+                    <input type="text"
+                        class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-100 "
+                        value="{{ Auth::user()->address }}" name="address" required/>
+                </div>
             </div>
         </div>
     </div>

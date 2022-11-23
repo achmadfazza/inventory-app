@@ -21,7 +21,7 @@
     <link href="{{ asset('dist/css/tabler.min.css') }}" rel="stylesheet" />
 </head>
 
-<body class="antialiased border-top-wide border-primary d-flex flex-column">
+<body class="antialiased border-top-wide border-primary d-flex flex-column  ">
     <div class="flex-fill d-flex flex-column justify-content-center">
         <div class="container-tight py-6 ">
             @yield('content')

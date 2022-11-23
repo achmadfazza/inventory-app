@@ -12,6 +12,9 @@
                             <th>Invoice</th>
                             <th>Nama Produk</th>
                             <th>Kuantitas Produk</th>
+                            <th>Nama Perusahaan</th>
+                            <th>No Telephone</th>
+                            <th>Alamat</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,6 +33,9 @@
                                         <li>{{ $detail->quantity }}</li>
                                     @endforeach
                                 </td>
+                                <td>{{ $transaction->user->company }}</td>
+                                <td>{{ $transaction->user->telp }}</td>
+                                <td>{{ $transaction->user->address }}</td>
                             </tr>
                         @endforeach
                     </tbody>
