@@ -21,7 +21,7 @@
         @isset($fromDate, $toDate)
             <div class="col-12 my-3">
                 <div class="d-flex justify-content-end mb-2">
-                    <a href="{{ route('backoffice.report.pdf', [$fromDate, $toDate]) }}" class="btn btn-primary">
+                    <a href="{{ route('backoffice.report.pdf', [$fromDate, $toDate]) }}" target="_blank" class="btn btn-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-download"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
