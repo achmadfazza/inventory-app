@@ -17,7 +17,7 @@
                 </x-widget>
             </div>
             <div class="col-6 col-lg-3">
-                <x-widget title="Supplier" subtitle="{{ $suppliers }}" class="bg-red">
+                <x-widget title="Lokasi" subtitle="{{ $suppliers }}" class="bg-red">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-delivery" width="24"
                         height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -54,7 +54,7 @@
                 </x-widget>
             </div>
             <div class="col-6 col-lg-3">
-                <x-widget title="Permintaan Produk" subtitle="{{ $orders->count() }}" class="bg-indigo">
+                <x-widget title="Transaksi Produk" subtitle="{{ $orders->count() }}" class="bg-indigo">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-database" width="24"
                         height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -66,7 +66,7 @@
                     </svg>
                 </x-widget>
             </div>
-            <div class="col-6 col-lg-3">
+            {{-- <div class="col-6 col-lg-3">
                 <x-widget title="Produk Keluar" subtitle="{{ $transactions }}" class="bg-teal">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-database-export"
                         width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -77,9 +77,9 @@
                         <path d="M4 12v6c0 1.599 3.335 2.905 7.538 2.995m8.462 -6.995v-2m-6 7h7m-3 -3l3 3l-3 3"></path>
                     </svg>
                 </x-widget>
-            </div>
+            </div> --}}
             <div class="col-6 col-lg-3">
-                <x-widget title="Produk Keluar Bulan Ini" subtitle="{{ $transactionThisMonth }}" class="bg-dark">
+                <x-widget title="Transaksi Bulan Ini" subtitle="{{ $transactionThisMonth }}" class="bg-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-database-export"
                         width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                         fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -97,11 +97,11 @@
                         Saat ini belum ada permintaan produk
                     </div>
                 @else
-                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    {{-- <div class="alert alert-danger d-flex align-items-center" role="alert">
                         <i class="fas fa-info-circle mr-2 fa-lg"></i>
                         Saat ini terdapat {{ $orders->count() }} permintaan barang menunggu konfirmasi.
                         <a href="{{ route('backoffice.order.index') }}" class="ml-1">Lihat Detail Permintaan</a>
-                    </div>
+                    </div> --}}
                 @endif
             </div>
         @endrole

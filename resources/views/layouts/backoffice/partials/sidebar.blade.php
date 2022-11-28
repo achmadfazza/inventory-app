@@ -4,7 +4,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a href="/" class="navbar-brand navbar-brand-autodark">
-            <h3 class="font-weight-bold">Gudangku</h3>
+            <h3 class="font-weight-bold">E-Procurement</h3>
         </a>
         <div class="navbar-nav flex-row d-lg-none">
             <div class="nav-item dropdown">
@@ -91,7 +91,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Supplier
+                                Lokasi
                             </span>
                         </a>
                     </li>
@@ -158,11 +158,11 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                            {{ Auth::user()->hasRole('admin') ? 'Produk Keluar' : 'Transaksi' }}
+                            {{ Auth::user()->hasRole('admin') ? 'Transaksi Produk' : 'Transaksi' }}
                         </span>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ Route::is('backoffice.order*') ? 'active' : '' }}"
                         href="{{ route('backoffice.order.index') }}">
                         <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
@@ -181,7 +181,7 @@
                             Permintaan Produk
                         </span>
                     </a>
-                </li>
+                </li> --}}
                 @role('admin')
                     <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Management User</div>
                     <li class="nav-item">

@@ -1,4 +1,4 @@
-@extends('layouts.auth.master', ['title' => 'Login - Gudangku'])
+@extends('layouts.auth.master', ['title' => 'Login - E-Proc'])
 
 @section('content')
     <form class="card card-md border-0 rounded-3" action="{{ route('login') }}" method="POST">

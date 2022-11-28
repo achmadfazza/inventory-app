@@ -3,14 +3,14 @@
 @section('content')
 <x-container>
   <div class="col-12 col-lg-8">
-    <x-card-action title="Daftar Supplier" url="{{ route('backoffice.supplier.index') }}">
+    <x-card-action title="Daftar Gudang" url="{{ route('backoffice.supplier.index') }}">
       <x-table>
         <thead>
           <tr>
             <th>#</th>
-            <th>Nama Supplier</th>
-            <th>Alamat Supplier</th>
-            <th>Telp Supplier</th>
+            <th>Nama </th>
+            <th>Alamat </th>
+            <th>Telp </th>
             <th>Aksi</th>
           </tr>
         </thead>
@@ -50,10 +50,10 @@
   <div class="col-12 col-lg-4">
     <form action="{{ route('backoffice.supplier.store') }}" method="POST">
       @csrf
-      <x-card title="Tambah Supplier" class="card-body">
-        <x-input title="Nama Supplier" name="name" type="text" placeholder="Masukan Nama Supplier" value="{{ old('name') }}" />
-        <x-input title="Telp Supplier" name="telp" type="number" placeholder="Masukan Telp Supplier" value="{{ old('telp') }}" />
-        <x-input title="Alamat Supplier" name="address" type="text" placeholder="Masukan Alamat Supplier" value="{{ old('address') }}" />
+      <x-card title="Tambah Gudang" class="card-body">
+        <x-input title="Nama " name="name" type="text" placeholder="Masukan Nama " value="{{ old('name') }}" />
+        <x-input title="Telp " name="telp" type="number" placeholder="Masukan Telp " value="{{ old('telp') }}" />
+        <x-input title="Alamat " name="address" type="text" placeholder="Masukan Alamat " value="{{ old('address') }}" />
         <x-button-save title="Simpan" />
       </x-card>
     </form>
