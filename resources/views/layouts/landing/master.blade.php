@@ -48,7 +48,7 @@
                     result.dismiss === Swal.DismissReason.cancel
                 ) {
                     swalWithBootstrapButtons.fire(
-                        'Data kamu tetap aman',
+                        'Data tidak dihapus',
                         '',
                         'error'
                     )

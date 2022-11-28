@@ -1,11 +1,11 @@
-@extends('layouts.landing.master', ['title' => 'Gudangku'])
+@extends('layouts.landing.master', ['title' => 'E-Procurement'])
 
 @section('content')
     @include('layouts.landing.partials.hero')
     <x-landing.container>
         <x-landing.grid class="lg:grid-cols-12 gap-6">
             <div class="col-span-12 lg:col-span-8">
-                <x-landing.header title="Daftar Produk" subtitle="Kumpulan data produk yang ada di gudang.."
+                <x-landing.header title="Daftar Produk" subtitle="Kumpulan produk"
                     url="{{ route('product.index') }}" />
                 <x-landing.grid class="md:grid-cols-2 gap-6 items-start">
                     @foreach ($products as $product)
@@ -31,7 +31,7 @@
             <div class="col-span-12 lg:col-span-4 row-start-1">
                 <div class="flex flex-col py-4 lg:py-0 lg:px-4">
                     <h1 class="text-gray-700 font-semibold text-lg">Daftar Kategori</h1>
-                    <p class="text-gray-500 text-xs">Kumpulan data kategori yang berada di gudang</p>
+                    <p class="text-gray-500 text-xs">Kumpulan kategori</p>
                 </div>
                 <div class="lg:p-4 flex flex-row gap-8 overflow-x-auto sm:grid sm:grid-cols-2 md:gap-2">
                     @foreach ($categories as $category)
