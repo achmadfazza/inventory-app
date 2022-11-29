@@ -12,7 +12,7 @@
                             <th>Nama Produk</th>
                             <th>Lokasi</th>
                             <th>Kategori</th>
-                            <th>Satuan</th>
+                            <th>Kebutuhan</th>
                             <th>Stok</th>
                             <th>Aksi</th>
                         </tr>

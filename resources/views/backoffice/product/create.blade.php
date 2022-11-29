@@ -14,7 +14,7 @@
                                 value="{{ old('image') }}" />
                         </div>
                         <div class="col-6">
-                            <x-input title="Satuan Produk" name="unit" type="text" placeholder="Masukan Satuan Produk"
+                            <x-input title="Kebutuhan" name="unit" type="text" placeholder="Masukan Kebutuhan Produk"
                                 value="{{ old('unit') }}" />
                         </div>
                     </div>
@@ -31,8 +31,8 @@
                             </x-select>
                         </div>
                         <div class="col-6">
-                            <x-select title="Supplier" name="supplier_id">
-                                <option value="" selected>Silahkan Pilih Supplier Produk</option>
+                            <x-select title="Lokasi" name="supplier_id">
+                                <option value="" selected>Silahkan Pilih Lokasi</option>
                                 @foreach ($suppliers as $supplier)
                                     <option value="{{ $supplier->id }}" @selected(old('supplier_id') == $supplier->id)>
                                         {{ $supplier->name }}

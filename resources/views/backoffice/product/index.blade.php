@@ -23,7 +23,7 @@
                             <th>#</th>
                             <th>Gambar</th>
                             <th>Nama Produk</th>
-                            <th>Supplier</th>
+                            <th>Lokasi</th>
                             <th>Kategori</th>
                             <th>Satuan</th>
                             <th>Aksi</th>
