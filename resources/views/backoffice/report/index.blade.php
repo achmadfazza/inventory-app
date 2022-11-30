@@ -1,6 +1,5 @@
 @extends('layouts.backoffice.master', ['title' => 'Laporan'])
 
-
 @section('content')
     <x-container>
         <div class="col-12">
@@ -12,7 +11,7 @@
                     </div>
                     <div class="col-6">
                         <x-input title="Tanggal Akhir" name="to_date" type="date" placeholder=""
-                            value="{{ $fromDate }}" />
+                            value="{{ $toDate }}" />
                     </div>
                 </div>
                 <x-button-save title="Report Data" />
@@ -21,7 +20,7 @@
         @isset($fromDate, $toDate)
             <div class="col-12 my-3">
                 <div class="d-flex justify-content-end mb-2">
-                    <a href="{{ route('backoffice.report.pdf', [$fromDate, $toDate]) }}" target="_blank" class="btn btn-primary">
+                    <a href="{{ route('backoffice.report.pdf', [$fromDate, $toDate]) }}" class="btn btn-primary" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-download"
                             width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -34,12 +33,13 @@
                         Cetak Laporan
                     </a>
                 </div>
-                <x-card title="LAPORAN DATA BARANG" class="card-body p-0">
+                <x-card title="LAPORAN DATA SUPPLIER" class="card-body p-0">
                     <x-table>
                         <thead>
                             <tr>
                                 <th style="width: 0px;">No</th>
-                                <th>Nama Barang</th>
+                                <th>Supplier</th>
+                                <th>Barang</th>
                                 <th class="text-right">Kuantitas Barang Keluar</th>
                             </tr>
                         </thead>
@@ -47,9 +47,15 @@
                             @foreach ($reports as $i => $report)
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
+                                    <td><p>{{ $report->user->name }}</p></td>
                                     <td>
                                         @foreach ($report->details as $detail)
-                                            <p>{{ $detail->product->quantity }} Item</p>
+                                            <p>{{ $detail->product->name }}</p>
+                                        @endforeach
+                                    </td>
+                                    <td class="text-right">
+                                        @foreach ($report->details as $detail)
+                                            <p>{{ $detail->quantity }} Item</p>
                                         @endforeach
                                     </td>
                                 </tr>

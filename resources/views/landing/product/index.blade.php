@@ -1,4 +1,4 @@
-@extends('layouts.landing.master', ['title' => 'E-'])
+@extends('layouts.landing.master', ['title' => 'E-Procurement'])
 
 @section('content')
     @include('layouts.landing.partials.hero')

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backoffice;
 
-use \PDF;
+use PDF;
 use Carbon\Carbon;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
@@ -31,9 +31,9 @@ class ReportController extends Controller
                 ->whereDate('created_at', '>=', $fromDate)
                 ->whereDate('created_at', '<=', $toDate)
                 ->get();
-        }
 
-        return view('backoffice.report.index', compact('fromDate', 'toDate', 'reports'));
+            return view('backoffice.report.index', compact('fromDate', 'toDate', 'reports'));
+        }
     }
 
     public function pdf($fromDate, $toDate)
