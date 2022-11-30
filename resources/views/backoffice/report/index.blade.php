@@ -40,22 +40,16 @@
                                 <th style="width: 0px;">No</th>
                                 <th>Supplier</th>
                                 <th>Barang</th>
-                                <th class="text-right">Kuantitas Barang Keluar</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($reports as $i => $report)
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
-                                    <td><p>{{ $report->user->name }}</p></td>
+                                    <td>{{ $report->user->name }}</td>
                                     <td>
                                         @foreach ($report->details as $detail)
                                             <p>{{ $detail->product->name }}</p>
-                                        @endforeach
-                                    </td>
-                                    <td class="text-right">
-                                        @foreach ($report->details as $detail)
-                                            <p>{{ $detail->quantity }} Item</p>
                                         @endforeach
                                     </td>
                                 </tr>

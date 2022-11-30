@@ -17,11 +17,16 @@ class TransactionController extends Controller
     public function __invoke(Request $request)
     {
         if ($request->user()->carts()->count() >= 1) {
+            $length = 8;
             $random = '';
 
-            $random .= date("d.m.Y");
+            for ($i = 0; $i < $length; $i++) {
+                $random .= rand(0, 1) ? rand(0, 9) : chr(rand(ord('a'), ord('z')));
+            }
 
-            $invoice = "INV -" . $random;
+            $date = date("d . m . Y");
+
+            $invoice = 'INV-' . Str::upper($random) . "-" . $date;
 
             $transaction = Transaction::create([
                 'invoice' => $invoice,

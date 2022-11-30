@@ -14,7 +14,7 @@
                                 value="{{ old('image') }}" />
                         </div>
                         <div class="col-6">
-                            <x-input title="Kebutuhan" name="unit" type="text" placeholder="Masukan Kebutuhan Produk"
+                            <x-input title="Kebutuhan Produk" name="unit" type="text" placeholder="Masukan Kebutuhan Produk"
                                 value="{{ old('unit') }}" />
                         </div>
                     </div>

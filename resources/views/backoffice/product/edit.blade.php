@@ -13,7 +13,7 @@
             <x-input title="Gambar Produk" name="image" type="file" placeholder="" value="{{ $product->image }}" />
           </div>
           <div class="col-6">
-            <x-input title="Satuan Produk" name="unit" type="text" placeholder="Masukan Satuan Produk" value="{{ $product->unit }}" />
+            <x-input title="Kebutuhan Produk" name="unit" type="text" placeholder="Masukan Satuan Produk" value="{{ $product->unit }}" />
           </div>
         </div>
 

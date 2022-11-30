@@ -25,7 +25,7 @@
                             <th>Nama Produk</th>
                             <th>Lokasi</th>
                             <th>Kategori</th>
-                            <th>Satuan</th>
+                            <th>Kebutuhan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>

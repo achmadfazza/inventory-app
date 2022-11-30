@@ -69,6 +69,7 @@
         <thead>
             <tr>
                 <th scope="col" style="width: 0px;">No</th>
+                <th scope="col" style="width: 0px;">Invoice</th>
                 <th scope="col" style="width: 0px;">Supplier</th>
                 <th scope="col" style="width: 0px;">Perusahaan</th>
                 <th scope="col" style="width: 0px;">Telp</th>
@@ -79,6 +80,13 @@
             @foreach ($reports as $i => $report)
                 <tr>
                     <td>{{ $i + 1 }}</td>
+                    <td>
+                        @foreach ($report->details as $detail)
+                            <ol style="padding: 0px;">
+                                {{ $detail->transaction->invoice }}
+                            </ol>
+                        @endforeach
+                    </td>
                     <td>{{ $report->user->name }}</td>
                     <td>{{ $report->user->company }}</td>
                     <td>{{ $report->user->telp }}</td>
