@@ -115,7 +115,7 @@
                     </li>
                 @endrole
                 @role('admin')
-                    <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Management Stok</div>
+                    <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Management Barang</div>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('backoffice.stock*') ? 'active' : '' }}"
                             href="{{ route('backoffice.stock.index') }}">
@@ -134,7 +134,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Stok
+                                Slot
                             </span>
                         </a>
                     </li>

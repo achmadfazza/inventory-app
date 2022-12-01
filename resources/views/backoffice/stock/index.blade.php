@@ -13,7 +13,7 @@
                             <th>Lokasi</th>
                             <th>Kategori</th>
                             <th>Kebutuhan</th>
-                            <th>Stok</th>
+                            <th>Slot Supllier</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>

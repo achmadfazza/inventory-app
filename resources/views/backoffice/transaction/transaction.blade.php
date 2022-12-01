@@ -3,7 +3,7 @@
 @section('content')
     <x-container>
         <div class="col-12">
-            <x-card-action title="Daftar Barang Keluar" url="{{ route('backoffice.transaction') }}">
+            <x-card-action title="Daftar Transaksi " url="{{ route('backoffice.transaction') }}">
                 <x-table>
                     <thead>
                         <tr>
@@ -11,7 +11,6 @@
                             <th>Customer</th>
                             <th>Invoice</th>
                             <th>Nama Produk</th>
-                            <th>Kuantitas Produk</th>
                             <th>Nama Perusahaan</th>
                             <th>No Telephone</th>
                             <th>Alamat</th>
@@ -28,11 +27,11 @@
                                         <li>{{ $detail->product->name }}</li>
                                     @endforeach
                                 </td>
-                                <td>
+                                {{-- <td>
                                     @foreach ($transaction->details as $detail)
                                         <li>{{ $detail->quantity }}</li>
                                     @endforeach
-                                </td>
+                                </td> --}}
                                 <td>{{ $transaction->user->company }}</td>
                                 <td>{{ $transaction->user->telp }}</td>
                                 <td>{{ $transaction->user->address }}</td>

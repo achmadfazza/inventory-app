@@ -54,7 +54,7 @@ class TransactionController extends Controller
 
             Cart::where('user_id', Auth::id())->delete();
 
-            return redirect(route('home'))->with('toast_success', 'Terimakasih pesanan anda akan diantar oleh pihak gudang');
+            return redirect(route('home'))->with('toast_success', 'Terimakasih,data anda sudah terkirim');
         } else {
             return back()->with('toast_error', 'Item tidak boleh kosong');
         }
