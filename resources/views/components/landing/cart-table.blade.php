@@ -8,9 +8,9 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-4 py-3 w-0"></th>
-                    <th scope="col" class="px-4 py-3">Nama Barang</th>
+                    <th scope="col" class="px-4 py-3">Nama Pengadaan</th>
                     <th scope="col" class="px-4 py-3 text-right">Jumlah</th>
-                    <th scope="col" class="px-4 py-3 w-0">Aksi</th>
+                    {{-- <th scope="col" class="px-4 py-3 w-0">Aksi</th> --}}
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 bg-white">
@@ -38,7 +38,7 @@
                         <td class="py-3 px-4 whitespace-nowrap text-right">
                             {{ $cart->quantity }} item
                         </td>
-                        <td class="py-3 px-4 whitespace-nowrap text-right flex gap-2">
+                        {{-- <td class="py-3 px-4 whitespace-nowrap text-right flex gap-2">
                             <form action="{{ route('cart.update', $cart->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
@@ -46,7 +46,7 @@
                                     class="w-16 border px-2 py-0.5 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
                                     value="{{ $cart->quantity }}" type="number" name="quantity" />
                             </form>
-                        </td>
+                        </td> --}}
                     @empty
                         <td class="py-3 px-4 whitespace-nowrap" colSpan="4">
                             <div class="flex items-center justify-center h-96">

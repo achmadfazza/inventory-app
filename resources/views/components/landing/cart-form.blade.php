@@ -13,7 +13,7 @@
                 <line x1="9" y1="13" x2="15" y2="13"></line>
                 <line x1="13" y1="17" x2="15" y2="17"></line>
             </svg>
-            Konfirmasi Pesanan
+            Konfirmasi Indentitas
         </div>
         <div class="p-4 bg-white">
             <div class="flex flex-col gap-4">

@@ -5,7 +5,7 @@
     <x-landing.container>
         <x-landing.grid class="lg:grid-cols-12 gap-6">
             <div class="col-span-12 lg:col-span-8">
-                <x-landing.header title="Daftar Produk" subtitle="Kumpulan produk"
+                <x-landing.header title="Daftar Barang Pengadaan" subtitle="Kumpulan Barang"
                     url="{{ route('product.index') }}" />
                 <x-landing.grid class="md:grid-cols-2 gap-6 items-start">
                     @foreach ($products as $product)
