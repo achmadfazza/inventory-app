@@ -12,7 +12,7 @@
                 <x-landing.product-item :product=$product />
                 @endforeach
             </x-landing.grid>
-            @if ($products->count() >= 6)
+            @if ($products->count() >= 10)
             <div class="mt-8 text-center flex justify-center">
                 <a href="{{ route('product.index') }}"
                     class="bg-gray-700 px-4 py-2 rounded-lg text-gray-50 flex items-center hover:bg-gray-900">

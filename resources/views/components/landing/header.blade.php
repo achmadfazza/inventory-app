@@ -7,7 +7,9 @@
     </div>
     <div class="w-full md:w-60">
         <form action="{{ $url }}" method="get">
-            <input class="border text-sm rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-sky-700 text-gray-700 w-full" placeholder="Cari Data..." value="{{ request()->search }}" name="search" />
+            <input
+                class="border text-sm rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-sky-700 text-gray-700 w-full"
+                placeholder="Cari Data..." value="{{ request()->search }}" name="search" />
         </form>
     </div>
 </div>
