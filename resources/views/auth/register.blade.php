@@ -8,6 +8,16 @@
             Register
         </h3>
         <div class="mb-3">
+            <label class="form-label">Nama Perusahaan</label>
+            <input type="text" class="form-control @error('company') is-invalid @enderror"
+                placeholder="masukan nama perusahaan" name="company">
+            @error('company')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label class="form-label">Nama</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="masukan nama anda"
                 name="name">
