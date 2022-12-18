@@ -8,16 +8,6 @@
             Register
         </h3>
         <div class="mb-3">
-            <label class="form-label">Nama Perusahaan</label>
-            <input type="text" class="form-control @error('company') is-invalid @enderror"
-                placeholder="masukan nama perusahaan" name="company">
-            @error('company')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
-        </div>
-        <div class="mb-3">
             <label class="form-label">Nama</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="masukan nama anda"
                 name="name">
@@ -29,6 +19,33 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Email</label>
+            <input type="email" class="form-control @error('email') is-invalid @enderror"
+                placeholder="masukan email anda" name="email">
+            @error('email')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <x-select title="Jenis Usaha" name="company">
+                <option value="" selected>silahkan pilih jenis usaha</option>
+                <option value="Person">Perseorangan</option>
+                <option value="PT">Perseroan Terbatas (PT)</option>
+            </x-select>
+        </div>
+        <div class="mb-3" data-parent="PT">
+            <label class="form-label">Nama Perusahaan</label>
+            <input type="text" class="form-control @error('company') is-invalid @enderror"
+                placeholder="masukan nama perusahaan" name="company">
+            @error('company')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nomor Npwp</label>
             <input type="email" class="form-control @error('email') is-invalid @enderror"
                 placeholder="masukan email anda" name="email">
             @error('email')

@@ -21,6 +21,12 @@
     <link href="{{ asset('dist/css/tabler.min.css') }}" rel="stylesheet" />
 </head>
 
+<style>
+    [data-parent] {
+        display: none;
+    }
+</style>
+
 <body class="antialiased border-top-wide border-primary d-flex flex-column  ">
     <div class="flex-fill d-flex flex-column justify-content-center">
         <div class="container-tight py-6 ">
@@ -28,5 +34,26 @@
         </div>
     </div>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4="
+    crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        $("select").on("change", function () {
+            if ($(this).val() === "") {
+                $("[data-parent]").hide();
+            } else {
+                $("div[data-parent='" + $(this).val() + "']").show();
+            }
+        });
+        $("select").on("change", function () {
+            if ($(this).val() === "Person") {
+                $("[data-parent]").hide();
+            } else {
+                $("div[data-parent='" + $(this).val() + "']").show();
+            }
+        });
+    });
+</script>
 
 </html>
