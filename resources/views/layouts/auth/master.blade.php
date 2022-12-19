@@ -27,7 +27,7 @@
     }
 </style>
 
-<body class="antialiased border-top-wide border-primary d-flex flex-column  ">
+<body class="antialiased border-top-wide border-primary d-flex flex-column whitespace-nowrap ">
     <div class="flex-fill d-flex flex-column justify-content-center">
         <div class="container-tight py-6 ">
             @yield('content')
@@ -42,12 +42,7 @@
         $("select").on("change", function () {
             if ($(this).val() === "") {
                 $("[data-parent]").hide();
-            } else {
-                $("div[data-parent='" + $(this).val() + "']").show();
-            }
-        });
-        $("select").on("change", function () {
-            if ($(this).val() === "Person") {
+            } else if ($(this).val() === "Person") {
                 $("[data-parent]").hide();
             } else {
                 $("div[data-parent='" + $(this).val() + "']").show();

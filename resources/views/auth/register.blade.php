@@ -47,7 +47,7 @@
         <div class="mb-3">
             <label class="form-label">Nomor Npwp</label>
             <input type="email" class="form-control @error('email') is-invalid @enderror"
-                placeholder="masukan email anda" name="email">
+                placeholder="masukan nomor npwp" name="email">
             @error('email')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -57,7 +57,7 @@
         <div class="mb-3">
             <label class="form-label">Kata Sandi</label>
             <input type="password" class="form-control @error('password') is-invalid @enderror"
-                placeholder="masukan kata sandi anda" name="password">
+                placeholder="masukan kata sandi anda" name="password" id="password">
             @error('password')
             <div class="invalid-feedback">
                 {{ $message }}
