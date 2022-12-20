@@ -69,44 +69,36 @@
         <thead>
             <tr>
                 <th scope="col" style="width: 0px;">No</th>
-                <th scope="col" style="width: 0px;">Invoice</th>
                 <th scope="col" style="width: 0px;">Supplier</th>
                 <th scope="col" style="width: 0px;">Perusahaan</th>
                 <th scope="col" style="width: 0px;">Telp</th>
-                <th scope="col" style="width: 0px;">Produk</th>
+                <th scope="col" style="width: 0px;">Barang</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($reports as $i => $report)
-                <tr>
-                    <td>{{ $i + 1 }}</td>
-                    <td>
-                        @foreach ($report->details as $detail)
-                            <ol style="padding: 0px;">
-                                {{ $detail->transaction->invoice }}
-                            </ol>
-                        @endforeach
-                    </td>
-                    <td>{{ $report->user->name }}</td>
-                    <td>{{ $report->user->company }}</td>
-                    <td>{{ $report->user->telp }}</td>
-                    <td>
-                        @foreach ($report->details as $detail)
-                            <ol style="padding: 0px;">
-                                {{ $detail->product->name }}
-                            </ol>
-                        @endforeach
-                    </td>
-                    {{-- <td style="text-align: right">
-                        @foreach ($report->details as $detail)
-                            <ol style="padding: 0px;">
-                                {{ $detail->quantity }} Item
-                            </ol>
-                        @endforeach
-                    </td>
-                </tr> --}}
+            <tr>
+                <td>{{ $i + 1 }}</td>
+                <td>{{ $report->user->name }}</td>
+                <td>{{ $report->user->company }}</td>
+                <td>{{ $report->user->telp }}</td>
+                <td>
+                    @foreach ($report->details as $detail)
+                    <ol style="padding: 0px;">
+                        {{ $detail->product->name }}
+                    </ol>
+                    @endforeach
+                </td>
+                {{-- <td style="text-align: right">
+                    @foreach ($report->details as $detail)
+                    <ol style="padding: 0px;">
+                        {{ $detail->quantity }} Item
+                    </ol>
+                    @endforeach
+                </td>
+            </tr> --}}
             @endforeach
-            {{-- <tr >
+            {{-- <tr>
                 <td style="color: rgb(17 24 39);">Total</td>
                 <td></td>
                 <td></td>
