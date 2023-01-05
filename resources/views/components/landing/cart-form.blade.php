@@ -39,7 +39,7 @@
                     </label>
                     <input type="text"
                         class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-100 "
-                        value="{{ Auth::user()->company }}" name="company" required/>
+                        value="{{ Auth::user()->company }}" name="company" required />
                 </div>
                 <div class="flex flex-col gap-y-2">
                     <label class="text-base text-gray-700">
@@ -47,7 +47,7 @@
                     </label>
                     <input type="text"
                         class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-100 "
-                        value="{{ Auth::user()->telp }}" name="telp" required/>
+                        value="{{ Auth::user()->telp }}" name="telp" required />
                 </div>
                 <div class="flex flex-col gap-y-2">
                     <label class="text-base text-gray-700">
@@ -55,14 +55,14 @@
                     </label>
                     <input type="text"
                         class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-100 "
-                        value="{{ Auth::user()->address }}" name="address" required/>
+                        value="{{ Auth::user()->address }}" name="address" required />
                 </div>
             </div>
         </div>
     </div>
     <div class="my-3">
         <button class="text-white bg-sky-900 hover:bg-sky-800 rounded-lg w-full p-2" type="submit">
-            Order Sekarang
+            Ikut Pengadaan
         </button>
     </div>
 </form>
