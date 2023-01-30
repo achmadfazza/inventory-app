@@ -29,7 +29,7 @@
 
 <body class="antialiased border-top-wide border-primary d-flex flex-column whitespace-nowrap ">
     <div class="flex-fill d-flex flex-column justify-content-center">
-        <div class="container-tight py-6 ">
+        <div class="container-tight py-6">
             @yield('content')
         </div>
     </div>
@@ -38,8 +38,8 @@
 <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4="
     crossorigin="anonymous"></script>
 <script>
-    $(function () {
-        $("select").on("change", function () {
+    $(function() {
+        $("select").on("change", function() {
             if ($(this).val() === "") {
                 $("[data-parent]").hide();
             } else if ($(this).val() === "Person") {
