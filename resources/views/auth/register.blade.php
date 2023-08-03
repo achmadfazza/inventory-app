@@ -29,7 +29,7 @@
             </div>
             <div class="mb-3">
                 <x-select title="Jenis Usaha" name="company">
-                    <option value="" selected>silahkan pilih jenis usaha</option>
+                    <option value="" selected>--silahkan pilih jenis usaha--</option>
                     <option value="Person">Perseorangan</option>
                     <option value="PT">Perseroan Terbatas (PT)</option>
                 </x-select>
